@@ -1,6 +1,6 @@
 <?php
 define('HOME',$_SERVER['HTTP_HOST'].'/osmium/');
-define('DB_INFO','mysql:host=localhost; dbname=test');
+define('DB_INFO','mysql:host=; dbname=');
 define('USER','root');
 define('PASS','root');
 define('THEME','default');
