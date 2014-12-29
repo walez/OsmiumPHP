@@ -1,0 +1,7 @@
+RewriteEngine on
+#RewriteBase /osmium/
+
+RewriteRule \.(gif|jpg|png|public|theme|css|ico|swf|js|inc\.php|php)$ - [L]
+RewriteRule ^(\w+)/?$ index.php?page=$1
+RewriteRule ^(\w+)/([\w\-]+)/?$ index.php?page=$1&action=$2
+RewriteRule ^(\w+)/([\w\-]+)/([\w\-\/\.@]+)? index.php?page=$1&action=$2&params=$3
