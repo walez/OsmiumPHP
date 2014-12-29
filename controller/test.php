@@ -10,10 +10,7 @@ class Test extends Controller{
 	// }
 	
 	function index(){	
-		$test_model =new Tests();
-		$all = $test_model->allTests();
-		// var_dump($all);exit();
-		$this->data['all'] = $all['id'] ;
+	
 		$this->data['name']='usman';
 		$this->data['lname']='Irale';
 		
