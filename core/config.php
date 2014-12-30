@@ -1,4 +1,10 @@
 <?php
+/*
+	OsmiumPHP
+	Created By Irale Usman
+	superirale@gmail.com
+	https://github.com/superirale/OsmiumPHP
+*/
 define('HOME',$_SERVER['HTTP_HOST'].'/osmium/');
 define('DB_INFO','mysql:host=; dbname=');
 define('USER','root');

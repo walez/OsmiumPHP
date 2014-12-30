@@ -1,6 +1,12 @@
 <?php 
+/*
+	OsmiumPHP
+	Created By Irale Usman
+	superirale@gmail.com
+	https://github.com/superirale/OsmiumPHP
+*/
 /**
-* 
+* Database connection class
 */
 class Database{
 	

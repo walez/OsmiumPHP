@@ -1,7 +1,9 @@
   <hr>
-
+	
       <footer>
-        <p>&copy; Company 2013</p>
+		  <div class="col-md-2 col-md-offset-5">
+		  	<p>&copy; OsmiumPHP 2014</p>
+		  </div>
       </footer>
     </div> <!-- /container -->
 

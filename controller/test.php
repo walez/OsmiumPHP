@@ -1,19 +1,20 @@
 <?php 
 /**
-* 
+* Sample Controller
+
 */
 
 
 class Test extends Controller{
 	// function __construct(){
-	// 	$this->
+	// 	
 	// }
 	
 	function index(){	
-	
-		$this->data['name']='usman';
-		$this->data['lname']='Irale';
-		
+		//setting data to be passed to the view
+		$this->data['welcome']='Welcome to OsmiumPHP';
+		$this->data['page_title'] ="Welcome";
+		//passing data to the view
 		View::render($this->data);
 	}
 		function backend($id)

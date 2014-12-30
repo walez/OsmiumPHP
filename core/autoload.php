@@ -1,4 +1,10 @@
 <?php 
+/*
+	OsmiumPHP
+	Created By Irale Usman
+	superirale@gmail.com
+	https://github.com/superirale/OsmiumPHP
+*/
 function __autoload($class){
 	$class = strtolower($class);
 	if(file_exists('core/'.$class.'.php')){
