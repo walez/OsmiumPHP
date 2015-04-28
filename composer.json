@@ -1,0 +1,24 @@
+{	
+	"name": "superirale/osmium",
+    "description": "Osmium PHP MVC Framework",
+    "license": "MIT",
+    "keywords": ["Osmium"],
+    "authors": [
+        {
+            "name": "Irale Usman",
+            "email": "superirale@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.0",
+        "phpunit/phpunit": "4.8.*@dev",
+        "wixel/gump": "dev-master",
+        "propel/propel": "~2.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+                    "": "application/"
+                 }
+    }
+}
