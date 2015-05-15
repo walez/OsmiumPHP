@@ -1,12 +1,11 @@
-<?php //namespace lib;
-/**
-* Author: Irale Usman
-*/
-// class Config
-// {
+<?php 
+namespace lib;
+
+class Config
+{
 	
-// 	public function __construct()
-	// {
+	public function __construct()
+	{
 		ob_start();
 
 		define('HOME',$_SERVER['HTTP_HOST'].'/osmium/');
@@ -25,7 +24,5 @@
 		define('DEFAULT_CONTROLLER','test');
 		define('DEFAULT_ACTION','index');
 		define('DS', DIRECTORY_SEPARATOR);
-	// }
-// }
-
- ?>
+	}
+}

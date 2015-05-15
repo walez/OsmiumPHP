@@ -1,9 +1,9 @@
-<?php namespace lib;
+<?php 
+namespace lib;
+
 use \PDO;
 use \lib\Error as Error;
-/**
-* 
-*/
+
 class Database extends PDO
 {
 	

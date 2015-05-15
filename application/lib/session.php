@@ -1,16 +1,14 @@
-<?php namespace lib;
+<?php 
+namespace lib;
 
-/**
-* 
-*/
 class Session
 {
 	private static $sessionStarted = false;
 
 	public static function init()
 	{
-		if(self::sessionStarted === false)
-		{ 
+		if(self::sessionStarted === false){ 
+
 			session_start();
 			self::$sessionStarted = true;
 		}
@@ -19,8 +17,8 @@ class Session
 	public static function set($vals)
 	{
 
-		foreach ($vals as $key => $value) 
-		{
+		foreach ($vals as $key => $value){
+
 			$_SESSION[$key] = $value;
 		}
 
@@ -36,8 +34,8 @@ class Session
 
 	public static function pull($key)
 	{
-		if(self::$sessionStarted === true && $key != false)
-		{
+		if(self::$sessionStarted === true && $key != false) {
+
 			unset($_SESSION[$key]);
 		}
 	
@@ -45,25 +43,22 @@ class Session
 
 	public static function display()
 	{
-		if (!empty($_SESSION)) 
-		{
+		if (!empty($_SESSION)) {
+
 			return $_SESSION;
 		}
 	}
 
 	public static function destroy($key = false)
 	{
-		if(self::$sessionStarted === true && $key != false)
-		{
+		if(self::$sessionStarted === true && $key != false) {
+
 			unset($_SESSION[$key]);
-		}
-		else
-		{
+		}else{
+
 			session_unset();
          	session_destroy();
 		}
 
 	}
 }
-
- ?>

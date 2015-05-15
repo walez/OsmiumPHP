@@ -1,12 +1,10 @@
-<?php namespace models;
+<?php 
+namespace models;
 
-/**
-* 
-*/
 class Test extends \lib\Model
 {
 	
-public function allTests(){
+	public function allTests(){
 
 		$sql = "SELECT * FROM question";
 		$res = $this->_setSql($sql);
@@ -18,10 +16,7 @@ public function allTests(){
 			return false;
 		}
 
-		return $tests;		
-		
+		return $tests;
 		
 	}
 }
-
- ?>

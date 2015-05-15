@@ -1,9 +1,8 @@
-<?php namespace controllers;
+<?php
+namespace controllers;
+
 use lib\view as View;
 
-/**
-* 
-*/
 class Test extends \lib\Controller
 {
 	public function __construct()
@@ -14,10 +13,10 @@ class Test extends \lib\Controller
 	public function index($id)
 	{
 
-		$author = new \Bookstore\Author();
-		$author->setFirstName('Mama');
-		$author->setLastName('Irale');
-		$author->save();
+		// $author = new \Bookstore\Author();
+		// $author->setFirstName('Usmani');
+		// $author->setLastName('Irale');
+		// $author->save();
 		$this->data['title'] ='Test Page';
 		$this->data['authors'] = \Bookstore\AuthorQuery::create()->find();
 
@@ -27,5 +26,3 @@ class Test extends \lib\Controller
 
 	}
 }
-
- ?>

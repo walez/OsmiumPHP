@@ -1,4 +1,5 @@
-<?php namespace lib;
+<?php 
+namespace lib;
 
 /**
 * 
@@ -13,37 +14,39 @@ class Router
 
 		if(!empty($_GET['url'])){
 
-		//get URL
-		$uri = explode('/',$_GET['url']);
-		$count = count($uri) - 1;
-		$params = array();
-
-
-		if($uri[0] && !empty($uri[0])){
-
-			$controller = $uri[0];
-		}
-
-		if($count > 1 && !empty($uri[1])){
-
-			$action = $uri[1];
-		}
-		else{
-
-			$action = DEFAULT_ACTION;
-		}
-
-		if(!empty($uri[2])){
-
-			for($i=2; $i<=$count; $i++){
-
-			$params[] = $uri[$i];
-
-			}
-		}
-		else{
+			//get URL
+			$uri = explode('/',$_GET['url']);
+			$count = count($uri) - 1;
 			$params = array();
-		}
+
+			// (isset($uri[0])) ? $controller = $uri[0]: DEFAULT_CONTROLLER;
+			
+			if($uri[0] && !empty($uri[0])){
+
+				$controller = $uri[0];
+			}
+
+			if(isset($uri[1]) && !empty($uri[1])){
+
+				$action = $uri[1];
+			}
+			else{
+
+				$action = DEFAULT_ACTION;
+			}
+
+			if(!empty($uri[2])){
+
+				for($i=2; $i<=$count; $i++){
+
+				$params[] = $uri[$i];
+
+				}
+			}
+			else{
+				
+				$params = array();
+			}
 		
 		}
 		else{
@@ -62,21 +65,18 @@ class Router
 			if(method_exists($controller_obj, $action)){
 
 				$controller_obj->$action($params);
-				}
-				else{
-					
-					$message ="Undeclared method/Action:"."<br><b>".$action."</b>";
-					\lib\Error::display($message);
-				}
+			}
+			else{
+				
+				$message ="Undeclared method/Action:"."<br><b>".$action."</b>";
+				\lib\Error::display($message);
+			}
 		}else{
 
 			$message ="Unknown Request"."<br><b>".$controller.'/'.$action."</b>";
-						\lib\Error::display($message);
+			\lib\Error::display($message);
 		}
-		
-		
+			
 	}
 
-
 }
- ?>

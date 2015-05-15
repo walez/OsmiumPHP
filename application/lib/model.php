@@ -1,8 +1,6 @@
-<?php namespace lib;
+<?php 
+namespace lib;
 
-/**
-* 
-*/
 class Model
 {
 	
@@ -17,8 +15,8 @@ class Model
 	
 	public function getAll($data = null, $fetchMode = \PDO::FETCH_OBJ)
 	{
-		if (!$this->_sql)
-		{
+		if (!$this->_sql){
+
 			throw new Exception("No SQL query!");
 		}
 		
@@ -29,8 +27,8 @@ class Model
 
 	public function getRow($data = null, $fetchMode = \PDO::FETCH_OBJ)
 	{
-		if (!$this->_sql)
-		{
+		if (!$this->_sql){
+
 			throw new Exception("No SQL query!");
 		}
 		
@@ -38,5 +36,40 @@ class Model
 		$sth->execute($data);
 		return $sth->fetch();
 	}
+	public function update($table, $data, $where)
+	{
+		
+		ksort($data);
+
+		$fieldDetails = NULL;
+		foreach($data as $key => $value){
+			$fieldDetails .= "$key = :$key,";
+		}
+		$fieldDetails = rtrim($fieldDetails, ',');
+
+		$whereDetails = NULL;
+		$i = 0;
+		foreach($where as $key => $value){
+			if($i == 0){
+				$whereDetails .= "$key = :$key";
+			} else {
+				$whereDetails .= " AND $key = :$key";
+			}
+			
+		$i++;}
+		$whereDetails = ltrim($whereDetails, ' AND ');
+
+		$stmt = $this->db->prepare("UPDATE $table SET $fieldDetails WHERE $whereDetails");
+
+		foreach($data as $key => $value){
+			$stmt->bindValue(":$key", $value);
+		}
+
+		foreach($where as $key => $value){
+			$stmt->bindValue(":$key", $value);
+		}
+
+		$stmt->execute();
+		$this->count = $stmt->rowCount();
+	}
 }
- ?>

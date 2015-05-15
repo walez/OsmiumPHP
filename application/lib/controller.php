@@ -1,6 +1,6 @@
-<?php namespace lib;
+<?php 
+namespace lib;
 
-use lib\config as Config;
 
 class Controller
 {
@@ -9,10 +9,6 @@ class Controller
 	function __construct()
 	{
 		$this->data = array();
-		$this->data['base_url'] = TEMPLATE_PATH;
+		$this->data['base_path'] = TEMPLATE_PATH;
 	}
 }
-
-
-
- ?>
